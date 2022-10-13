@@ -9,7 +9,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemo
 from text import ABOUT, COURSES, NAME, PHONE, COURSE_CHOSE, OK, AGAIN
 
 
-API_TOKEN = '5471358940:AAGXUerW1c6cwR9t9DPEOmVJBOGnTdCWUVM'
+API_TOKEN = '5787911842:AAHu6tB6iL5RctZLSANyWocLvevavOaY6Dg'
 logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=API_TOKEN)

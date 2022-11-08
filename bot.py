@@ -118,6 +118,9 @@ async def check_data(message, state):
 async def get_course(message, state):
     if message.text == 'Все верно':
         await message.answer(OK, reply_markup=ReplyKeyboardRemove())
+        rkm = ReplyKeyboardMarkup(resize_keyboard=True)
+        rkm.add(KeyboardButton('Зарегистрироваться еще раз'))
+        await message.answer('Нажмите на кнопку или введите команду /start чтобы зарегистрироваться еще раз')
         data = await state.get_data()
         createPage(data['name'], data['course'], data['number'])
         await state.finish()
@@ -129,6 +132,10 @@ async def get_course(message, state):
         rkm.add(KeyboardButton('Все верно'))
         rkm.add(KeyboardButton('Хочу исправить'))
 
+@dp.message_handler()
+async def get_course(message):
+    if message.text == 'Зарегистрироваться еще раз':
+        start()
 
 
 

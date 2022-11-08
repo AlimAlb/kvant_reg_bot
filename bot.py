@@ -120,7 +120,7 @@ async def get_course(message, state):
         await message.answer(OK, reply_markup=ReplyKeyboardRemove())
         rkm = ReplyKeyboardMarkup(resize_keyboard=True)
         rkm.add(KeyboardButton('Зарегистрироваться еще раз'))
-        await message.answer('Нажмите на кнопку или введите команду /start чтобы зарегистрироваться еще раз')
+        await message.answer('Нажмите на кнопку чтобы зарегистрироваться на другой курс')
         data = await state.get_data()
         createPage(data['name'], data['course'], data['number'])
         await state.finish()
@@ -135,7 +135,7 @@ async def get_course(message, state):
 @dp.message_handler()
 async def get_course(message):
     if message.text == 'Зарегистрироваться еще раз':
-        start()
+        start(message)
 
 
 

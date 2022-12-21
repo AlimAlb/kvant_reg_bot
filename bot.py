@@ -41,7 +41,7 @@ async def start(message):
 async def sendcaptcha(message,state):
     fullcaptcha = createcaptcha()
     await state.update_data(answcaptcha=fullcaptcha[1])
-    await message.answer("Ваша капча:\n\n" + fullcaptcha[0] + "\n\nРешите что бы продолжить регестрацию!", reply_markup=ReplyKeyboardRemove())
+    await message.answer("Ваша капча:\n\n" + fullcaptcha[0] + "\n\nРешите что бы продолжить регистрацию!", reply_markup=ReplyKeyboardRemove())
     await UserState.captcha.set()
 
 
